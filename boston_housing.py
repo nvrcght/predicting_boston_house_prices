@@ -5,10 +5,6 @@ import numpy as np
 import pylab as pl
 from sklearn import datasets
 from sklearn.tree import DecisionTreeRegressor
-
-################################
-### ADD EXTRA LIBRARIES HERE ###
-################################
 from sklearn import  grid_search, metrics
 from sklearn.cross_validation import train_test_split, cross_val_score  
 from sklearn.metrics import mean_squared_error,make_scorer 
@@ -136,9 +132,8 @@ def fit_predict_model(city_data):
     parameters = {'max_depth':(1,2,3,4,5,6,7,8,9,10)}
 
     my_scorer = make_scorer(performance_metric, greater_is_better = False)
-    # 2. Use gridearch to fine tune the Decision Tree Regressor and find the best model
-    # http://scikit-learn.org/stable/modules/generated/sklearn.grid_search.GridSearchCV.html#sklearn.grid_search.GridSearchCV
     
+    #Use gridearch to fine tune the Decision Tree Regressor and find the best model
     print "Final Model: "
     x = [11.95, 0.00, 18.100, 0, 0.6590, 5.6090, 90.00, 1.385, 24, 680.0, 20.20, 332.09, 12.13]
     
